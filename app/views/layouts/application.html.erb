@@ -13,6 +13,9 @@
         <li id="items-in-cart"><%= link_to "Cart | Total items: #{ cart_items }", cart_path %></li>
         <li><%= link_to "See all products", products_path %></li>
         <% if current_user %>
+          <% if current_user.admin %>
+            <li><%= link_to "New Product", new_product_path %></li>
+          <% end %>
           <li><%= current_user.email %></li>
           <li><%= link_to "Sign out", '/sign_out' %></li>
         <% else %>
