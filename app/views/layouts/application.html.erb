@@ -28,7 +28,7 @@
 
   <body>
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, id: "flash_#{name}" %>
+      <%= content_tag :div, msg, id: "flash_#{name}", class:(name === "notice" ? "teal lighten-2 white-text" : "black lighten-2 white-text"), style: "text-align: center" %>
     <% end %>
     <div class="container">
       <%= yield %>

@@ -37,7 +37,8 @@ To set up:
 
   - [x] Ensure that users can't order a negative number of items.
       * I added a validation to the model as well as updated the form to have a min amount
-  - [ ] Add flash messages for signing up, signing in and signing out.
+  - [x] Add flash messages for signing up, signing in and signing out.
+      * I added colored flash notices and alerts to the users controller (for sign ups) and to the sessions controller (for sign ins and sign outs)
   - [ ] Add product update and delete functionality for admins.
   - [ ] Add admin flash messages for adding, updating and deleting products.
   - [x] Add Paperclip for product image upload.
