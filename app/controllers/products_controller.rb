@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to '/'
     else
+      flash[:alert] = "The product failed to be added"
       render :new
     end
   end
