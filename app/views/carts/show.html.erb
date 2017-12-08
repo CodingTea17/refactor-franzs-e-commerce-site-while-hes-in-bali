@@ -2,10 +2,9 @@
 
 <% if @order_items.any? %>
   <% @order_items.each do |item| %>
-    <p><%= item.product.name %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
-    <p> Unit Price: <%= number_to_currency item.product.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.product.price * item.quantity) %></p>
+   <div id="order-item-<%= item.id %>"><%= render 'order_item', :item => item %></div>
   <% end %>
-  <p>Your Total: <%= number_to_currency current_order.total_price %></p>
+  <p>Your Total: <span id="total-price"><%= number_to_currency current_order.total_price %></span></p>
   <p><%= link_to "Finalize order", finalize_path %></p>
 <% else %>
   <p>Your shopping cart is empty.</p>
@@ -18,6 +17,6 @@
     <% order.order_items.each do |item| %>
       <p>Item name: <%= item.product.name %> | Quantity: <%= item.quantity %> | Price: <%= number_to_currency item.product.price %>
     <% end %>
-    <p>Total cost: <%= number_to_currency order.total_price %>
+    <p>Total cost: <%= number_to_currency order.total_price %></p>
   <% end %>
 <% end %>

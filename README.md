@@ -23,3 +23,10 @@ Record of Changes:
     * I modified the product index to have empty, hidden divs for each product that have an id equivalent to the product's id.
     * I then added a show to the products controller to determine whether it should the show.html.erb (if someone opens the product details in a new tab) or use the show.js.erb to use jQuery to show the product details on the product index page.
     * The jQuery targets the empty div for a given product and renders the product_details partial into it and toggles it show on the page.
+
+  * To Delete Cart Items using AJAX
+
+    * I changed the cart page to render each order item through a partial (`_order_item.html.erb`) into a div with that order item's id.
+    * I added a `remote: true` to the delete link for each item.
+    * I created `destroy.js.erb` to remove the item from the page, recalculate the total price, and update the number of items in cart.
+    * In the controller I setup the destroy route to render the jQuery when the incoming format matches js.
