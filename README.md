@@ -16,3 +16,10 @@ Record of Changes:
     * I changed 'order_items_controller' to respond to both html and javascript when a new order item is created.
     * I added a span around the element that displays the number of order items in the cart in application.html.erb.
     * In the product index.html.erb added `remote: true` to the form and made the number_field pickier.
+
+  * To Show Product Details using AJAX
+
+    * I created three files (`_product_details.html.erb`, `show.html.erb`, `show.js.erb`)
+    * I modified the product index to have empty, hidden divs for each product that have an id equivalent to the product's id.
+    * I then added a show to the products controller to determine whether it should the show.html.erb (if someone opens the product details in a new tab) or use the show.js.erb to use jQuery to show the product details on the product index page.
+    * The jQuery targets the empty div for a given product and renders the product_details partial into it and toggles it show on the page.
