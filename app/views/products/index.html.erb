@@ -7,7 +7,6 @@
       <h4><%= product.name %></h4>
       <%= link_to "Render details", product_path(product), :remote => true %>
       <p><%= number_to_currency product.price %></p>
-      <h1 id="mySpinner" style="display: none;">H1</h1>
       <div id="product-details-<%= product.id %>" style="display: none;">
         <!-- Where product details will render when an AJAX call is made -->
       </div>
