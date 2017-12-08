@@ -43,7 +43,8 @@ To set up:
   - [x] Add Paperclip for product image upload.
       * I added the `paperclip` gem, edited the product model to validate an image, changed the migration, tweaked the product details partial, and modified the new product form to accept images/
   - [ ] Allow other than whole dollar amounts for admin product creation (for instance, 3.99).
-  - [ ] Add product validations.
+  - [x] Add product validations.
+      * I added validations for name, description, price, and images in the products model.
   - [ ] Add Stripe so users can pay when finalizing orders.
   - [ ] Add password validations to ensure a user's password is sufficiently complex.
   - [ ] Add admin links to navbar so admins can easily add, update and delete products.
