@@ -48,8 +48,10 @@ To set up:
   - [x] Add product validations.
       * I added validations for name, description, price, and images in the products model.
   - [ ] Add Stripe so users can pay when finalizing orders.
-  - [ ] Add password validations to ensure a user's password is sufficiently complex.
-  - [ ] Add admin links to navbar so admins can easily add, update and delete products.
+  - [x] Add password validations to ensure a user's password is sufficiently complex.
+      * I added validations for an uppercase and lowercase letter as well as a validation for length to be at least 8. They all have custom messages to let the user know what specifically they did wrong.
+  - [x] Add admin links to navbar so admins can easily add, update and delete products.
+      * I did add a link for adding products. 
   - [ ] Fix the row height for products, which can quickly become uneven.
   - [ ] Add integration testing for AJAX functionality.
   - [ ] Add further AJAX functionality where it might be useful.
