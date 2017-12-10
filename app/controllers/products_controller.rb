@@ -33,7 +33,14 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-
+    @product = Product.find(params[:id])
+    if @product.destroy
+      flash[:alert] = "Product removed!"
+      respond_to do |format|
+        format.html {redirect_to product_path}
+        format.js { render "destroy" }
+      end
+    end
   end
 
   private

@@ -1,12 +1,15 @@
-<h3>Products</h3>
+<h3 id="products-header">Products</h3>
 
 <div class="row">
   <div class="section">
   <% @products.each do |product| %>
-    <div class="col s4" style="height: 625px; position: relative;">
+    <div class="col s4" style="height: 625px; position: relative;" id="product-<%= product.id %>">
         <h4><%= product.name %></h4>
         <%= link_to "Render details", product_path(product), :remote => true %>
         <p><%= number_to_currency product.price %></p>
+        <% if admin %>
+          <%= link_to "Delete", product_path(product), :data => {:confirm => "You sure?", :method => "delete", remote: true} %>
+        <% end %>
         <div id="product-details-<%= product.id %>" style="display: none;">
           <!-- Where product details will render when an AJAX call is made -->
         </div>
