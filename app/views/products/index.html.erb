@@ -9,6 +9,7 @@
         <p><%= number_to_currency product.price %></p>
         <% if admin %>
           <%= link_to "Delete", product_path(product), :data => {:confirm => "You sure?", :method => "delete", remote: true} %>
+          <%= link_to "Update", product_path(product) %>
         <% end %>
         <div id="product-details-<%= product.id %>" style="display: none;">
           <!-- Where product details will render when an AJAX call is made -->

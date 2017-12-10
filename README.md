@@ -39,8 +39,10 @@ To set up:
       * I added a validation to the model as well as updated the form to have a min amount
   - [x] Add flash messages for signing up, signing in and signing out.
       * I added colored flash notices and alerts to the users controller (for sign ups) and to the sessions controller (for sign ins and sign outs)
-  - [ ] Add product update and delete functionality for admins.
-  - [ ] Add admin flash messages for adding, updating and deleting products.
+  - [x] Add product update and delete functionality for admins.
+      * Destroy is done from the product index page and uses AJAX. Update is done from a product show page where jQuery is used unless the user uploads an image. One bug is that since I use the jQuery '.before' to render the flash message partial they stack when changes/destroys are made continuously.
+  - [x] Add admin flash messages for adding, updating and deleting products.
+      * Flash messages are in place, but the update and delete messages stack due to the way I use jQuery to place them before the container... I'm considering using an empty id'ed div or something I can target and replace when rendering the flash message partial.
   - [x] Add Paperclip for product image upload.
       * I added the `paperclip` gem, edited the product model to validate an image, changed the migration, tweaked the product details partial, and modified the new product form to accept images/
   - [x] Allow other than whole dollar amounts for admin product creation (for instance, 3.99).
@@ -55,4 +57,5 @@ To set up:
   - [x] Fix the row height for products, which can quickly become uneven.
       * Not a good fix, but I made each product have a height of 625px. When the 300px picture loads it fits snuggly into the div. However, when the details aren't shown the extra space is a little awk.
   - [ ] Add integration testing for AJAX functionality.
-  - [ ] Add further AJAX functionality where it might be useful.
+  - [x] Add further AJAX functionality where it might be useful.
+      * I added it to the admin product update/delete. The update doesn't seem to use ajax when I upload a photo, but that might be because the format isn't solely js.

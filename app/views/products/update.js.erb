@@ -1,0 +1,2 @@
+$(".container").before("<%= j render 'layouts/flash' %>");
+$("#product-details-<%=@product.id%>").html("<%= j render 'products/product_details', :product => @product %>");

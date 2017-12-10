@@ -21,7 +21,8 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to '/'
+      flash[:notice] = "Product created!"
+      redirect_to products_path
     else
       flash[:alert] = "The product failed to be added"
       render :new
@@ -29,7 +30,14 @@ class ProductsController < ApplicationController
   end
 
   def update
-
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      flash[:notice] = "Product updated!"
+      respond_to do |format|
+        format.html {redirect_to product_path(@product)}
+        format.js { render "update" }
+      end
+    end
   end
 
   def destroy
